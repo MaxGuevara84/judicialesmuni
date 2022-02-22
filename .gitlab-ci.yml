@@ -6,8 +6,26 @@
 # Note that environment variables can be set in several places
 # See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 stages:
-- test
-sast:
-  stage: test
-include:
-- template: Security/SAST.gitlab-ci.yml
+  - dev
+  - prod
+desarrollo:
+  stage: dev
+  only:
+    - develop
+  tags:
+    - dev
+  script:
+    - cd /home/ubuntu/wsapi/
+    - git checkout develop
+    - git pull origin develop
+produccion:
+  stage: prod
+  only:
+    - master
+  tags:
+    - prod
+  script:
+    - cd /home/ubuntu/wsapi/
+    - git checkout master
+    - git pull origin master
+

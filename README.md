@@ -2,6 +2,12 @@
 
 api integración
 
+# Endpoint
+GET http://wsautenticacion.municipiosanjuan.gob.ar/listar
+
+#NPM PACKAGE
+npm i mysql express-myconnection
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.

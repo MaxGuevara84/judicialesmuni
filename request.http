@@ -1,4 +1,20 @@
 ###
 Send Request
 
-GET http://wsautenticacion.municipiosanjuan.gob.ar/listar HTTP/1.1
+GET http://apireclamos.municipiosanjuan.gob.ar/listar HTTP/1.1
+
+###
+
+POST http://apireclamos.municipiosanjuan.gob.ar HTTP/1.1
+
+{
+    "reclamo": ""
+}
+
+###
+
+DELETE http://apireclamos.municipiosanjuan.gob.ar/  HTTP/1.1
+
+{
+    "reclamo": ""
+}

@@ -1,0 +1,30 @@
+{
+  "name": "wsapiintegracion",
+  "version": "1.0.0",
+  "description": "api integración",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/mediosweb/wsapiintegracion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/mediosweb/wsapiintegracion/issues"
+  },
+  "homepage": "https://gitlab.com/mediosweb/wsapiintegracion#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-myconnection": "^1.0.4",
+    "mysql": "^2.18.1",
+    "swagger-jsdoc": "^6.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

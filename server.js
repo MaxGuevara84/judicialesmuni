@@ -7,7 +7,7 @@ const routes = require ('./routes')
 const app = express()
 app.set('port', process.env.PORT || 4600)
 const dbOptions={
-    host: '192.168.5.152',
+    host: '192.168.5.153',
     port: 4600,
     username: 'kevinm',
     password: 'Kevin.2021',

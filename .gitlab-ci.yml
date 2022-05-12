@@ -8,6 +8,11 @@
 stages:
 - testeo
 sast:
-  stage: testeo
+  stage: dev
+  script: 
+  - cd /home/code/wsapiintegracion
+  - git stash
+  - git checkout main
+  - git pull origin main
 include:
 - template: Security/SAST.gitlab-ci.yml

@@ -8,7 +8,7 @@
 stages:
 - testeo
 sast:
-  stage: dev
+  stage: testeo
   script: 
   - cd /home/code/wsapiintegracion
   - git stash

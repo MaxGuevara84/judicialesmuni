@@ -1,18 +1,18 @@
 import {Router} from 'express';
-import { solicitudController } from './Solicitudes_Controller';
+import { peticionController } from './PeticionesController';
 const router: Router = Router();
-class SolicitudesRouter {
+class PeticionesRouter {
     router:Router;
     constructor(){
         this.router = router;
         this.routes();
     }
     routes(){
-        this.router.post('/agregar', solicitudController.agregar);
-        this.router.get('/listar', solicitudController.listar);
-        this.router.post('/SOA',solicitudController.soapSJ)
-        this.router.get('/obleas', solicitudController.consultarObleas);
+       // this.router.post('/agregar', peticionController.agregar);
+        this.router.get('/listar', peticionController.listar);
+       // this.router.put('/modificar',peticionController.modificar)
+       // this.router.delete('/delete', peticionController.eliminarReclamos);
     }
 }
-const solicitudRouter = new SolicitudesRouter();
-export default solicitudRouter.router;
+const peticionController = new PeticionesRouter();
+export default PeticionesRouter.router;

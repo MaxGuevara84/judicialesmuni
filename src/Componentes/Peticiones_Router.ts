@@ -14,5 +14,5 @@ class PeticionesRouter {
        // this.router.delete('/delete', peticionController.eliminarReclamos);
     }
 }
-const peticionController = new PeticionesRouter();
-export default PeticionesRouter.router;
+const peticionNController = new PeticionesRouter();
+export default peticionNController.router;

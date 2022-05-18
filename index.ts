@@ -5,9 +5,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 import {Request, Response, NextFunction} from 'express';
 import formData from 'express-form-data';
-import responder from './Middlewares/responder';
-import dbMysql from './Config/databaseMySQL';
-import Peticiones_Router from './Componentes/Peticiones_Router';
+import responder from './src/Middlewares/responder';
+import dbMysql from './src//Config/databaseMySQL';
+import Peticiones_Router from './src/Componentes/Peticiones_Router';
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'desarrollo';
 class Server{
@@ -23,7 +23,7 @@ class Server{
         this.routear();
       }
       configurar() {
-        this.app.set('port', process.env.PORT || 4500);
+        this.app.set('port', process.env.PORT || 4600);
         this.app.use(morgan('dev'));
         this.app.use(cors());
         this.app.use(express.json());
@@ -58,7 +58,7 @@ class Server{
       iniciar() {
         this.app.listen(this.app.get('port'), () => {
           console.log(
-            `⚡️[RECLAMOS]: El Servidor de ${process.env.NODE_ENV} esta corriendo en el puerto ${process.env.PORT}`
+            `⚡️[RECLAMOS]: El Servidor de ${process.env.NODE_ENV} esta corriendo en el puerto ${process.env.PORT || 4600}`
           );
         });
       }

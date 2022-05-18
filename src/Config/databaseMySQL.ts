@@ -6,7 +6,7 @@ var dbMysql = mysql.createConnection({
   database : 'db_sem'
 });
  
-dbMysql.connect(function (err){
+dbMysql.connect(function (err:any){
     if(err){
         throw err;
     }else{

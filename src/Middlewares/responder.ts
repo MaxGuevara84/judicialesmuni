@@ -16,7 +16,7 @@ const responder = {
     let errorObject = err || {};
     console.error(errorObject);
     res.status(statusCode).json({
-      error: true,cl
+      error: true,
       status: statusCode,
       message: statusMessage,
     });

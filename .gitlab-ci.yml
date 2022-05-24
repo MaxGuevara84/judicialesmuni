@@ -1,5 +1,5 @@
 stages:
-- prod
+- test
 - build
 sast:
   stage: build

@@ -1,8 +1,8 @@
 stages:
 - prod
-- dev
+- build
 sast:
-  stage: dev
+  stage: build
   script: 
   - cd /home/gitlab-runner/wsapiintegracion
   - git stash

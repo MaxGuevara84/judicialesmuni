@@ -1,6 +1,7 @@
 stages:
 - build
 - test
+- deploy
 sast:
   stage: build
   script: 

@@ -7,7 +7,7 @@ sast:
   - cd /home/code/wsapiintegracion
   - git stash
   - git checkout main
-  - git pull origin main  
+  - git pull origin main
 include:
 - template: Security/SAST.gitlab-ci.yml
 #test

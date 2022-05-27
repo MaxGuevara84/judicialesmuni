@@ -29,6 +29,28 @@ class PeticionesController {
         }
     }
 
+    public async agregar(req:Request, res:Response){
+        try{
+            const datosBody = req.body;
+            if (!datosBody) {
+                throw new Error('No se ingresaron datos');
+            }else{
+                if(datosBody.solicitud && datosBody.tipoSolicitud){
+                    if () {
+                        responder.sucess(req, res, 'Reclamo Agregado', );
+                      } else {
+                        responder.error(req, res, '', 'Ocurrio un error al agregar el reclamo');
+                      }
+                }else{
+                    responder.error(req, res, '', 'Debe ingresar reclamo y idReclamo', 400);
+                }
+            }
+        }catch(error){
+            console.log(error);
+            responder.error(req, res);
+        }
+    }
+
     public async getCatalogs(req: Request, res: Response) {
         try {
             dbMysql.query('SELECT * FROM dbo_areas', [req.query.dominio], (areaError: any, areaResult: any) => {

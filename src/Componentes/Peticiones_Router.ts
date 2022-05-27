@@ -8,7 +8,7 @@ class PeticionesRouter {
         this.routes();
     }
     routes(){
-       // this.router.post('/agregar', peticionController.agregar);
+        this.router.post('/agregar', peticionController.agregar);
         this.router.get('/listar', peticionController.listar);
         this.router.get('/catalogs', peticionController.getCatalogs);
        // this.router.put('/modificar',peticionController.modificar)

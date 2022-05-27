@@ -5,7 +5,7 @@ stages:
 sast:
   stage: build
   script: 
-  - cd /home/code/wsapiintegracion
+  - cd /home/gitlab-runner/wsapiintegracion
   - git stash
   - git checkout main
   - git pull origin main

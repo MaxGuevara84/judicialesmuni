@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import responder from '../Middlewares/responder';
-import dbMysql from '../Config/databaseMySQL'
+import dbMysql from '../Config/databaseMySQL';
+import modeloReclamo from '../Componentes/Peticiones_Model';
 
 class PeticionesController {
     public async listar(req: Request, res: Response) {
@@ -35,8 +36,10 @@ class PeticionesController {
             if (!datosBody) {
                 throw new Error('No se ingresaron datos');
             }else{
-                if(datosBody.solicitud && datosBody.tipoSolicitud){
-                    if () {
+                const nuevoReclamo = new modeloReclamo(datosBody);
+                if(datosBody.reclamo && datosBody.tipoReclamo){
+                    const op = await nuevoReclamo.save();
+                    if (op) {
                         responder.sucess(req, res, 'Reclamo Agregado', );
                       } else {
                         responder.error(req, res, '', 'Ocurrio un error al agregar el reclamo');

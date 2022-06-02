@@ -36,7 +36,7 @@ class PeticionesController {
                 throw new Error('No se ingresaron datos');
             }else{
                if(datosBody.reclamo && datosBody.tipoReclamo){
-                dbMysql.query(`INSERT id_reclamo, contenido_reclamo, INTO db_sem.dbo_reclamos`,
+                dbMysql.query(`INSERT INTO db_sem.dbo_reclamos SET ?`,
             [req.query.reclamo],
             (err: any, results: any, fields: any) => {
                 if (err) {

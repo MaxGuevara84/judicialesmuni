@@ -2,14 +2,24 @@ stages:
 - build
 - test
 - deploy
-sast:
+
+Build Job:
   stage: build
   script: 
-  - cd /home/ndps/wsapiintegracion
+  - cd /home/gitlab-runner/wsapiintegracion
   - git stash
   - git checkout main
   - git pull origin main
-  
+
+Test Job:
+  stage: test
+  script:
+    - echo "Jab Test"
+
+Deploy Job:
+  stage: deploy
+  script:
+    - echo "Job Deploy"
+
 include:
-- template: Security/SAST.gitlab-ci.yml
-#test
+    - template: Security/SAST.gitlab-ci.yml

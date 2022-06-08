@@ -5,8 +5,8 @@ stages:
 
 Build Job:
   stage: build
-  script: 
- - echo "Jab Test"
+  script:
+    - echo "Jab Test"
 
 Test Job:
   stage: test

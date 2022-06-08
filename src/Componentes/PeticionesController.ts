@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import responder from '../Middlewares/responder';
-import dbMysql from '../Config/databaseMySQL'
+import dbMysql from '../Config/databaseMySQL';
 
 class PeticionesController {
     public async listar(req: Request, res: Response) {
@@ -24,6 +24,34 @@ class PeticionesController {
                 });
 
         } catch (error) {
+            console.log(error);
+            responder.error(req, res);
+        }
+    }
+
+    public async agregar(req:Request, res:Response){
+        try{
+            const datosBody = req.body;
+            if (!datosBody) {
+                throw new Error('No se ingresaron datos');
+            }else{
+               if(datosBody.reclamo && datosBody.tipoReclamo){
+                dbMysql.query(`INSERT INTO db_sem.dbo_reclamos SET ?`,
+            [req.query.reclamo],
+            (err: any, results: any, fields: any) => {
+                if (err) {
+                    // Si tengo error lo mando al middleware del error
+                    responder.error(req, res, err);
+                } else {
+                    // Caso contrario mando successs
+                    responder.sucess(req, res, results, 'Reclamos obtenidos', 200);
+                }
+            });
+                }else{
+                    responder.error(req, res, '', 'Debe ingresar reclamo y idReclamo', 400);
+                }
+            }
+        }catch(error){
             console.log(error);
             responder.error(req, res);
         }

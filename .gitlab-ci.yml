@@ -6,10 +6,7 @@ stages:
 Build Job:
   stage: build
   script: 
-  - cd /home/gitlab-runner/wsapiintegracion
-  - git stash
-  - git checkout main
-  - git pull origin main
+ - echo "Jab Test"
 
 Test Job:
   stage: test

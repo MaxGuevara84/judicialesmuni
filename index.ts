@@ -9,6 +9,9 @@ import responder from './src/Middlewares/responder';
 import dbMysql from './src//Config/databaseMySQL';
 import Peticiones_Router from './src/Componentes/Peticiones_Router';
 
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerUI = require("swagger-ui-express");
+
 process.env.NODE_ENV = process.env.NODE_ENV || 'desarrollo';
 class Server{
     public app: express.Application;

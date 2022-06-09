@@ -6,7 +6,11 @@ stages:
 Build Job:
   stage: build
   script:
-    - echo "Jab Test"
+    - git fetch
+    - git pull
+  artifacts:
+    paths:
+    - /home/gitlab-runner/wsapiintegracion
 
 Test Job:
   stage: test

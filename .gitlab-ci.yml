@@ -8,7 +8,6 @@ Build Job:
   script:
     - git fetch --all
     - git pull origin main
-    - npm install
   artifacts:
     paths:
     - /home/gitlab-runner/wsapiintegracion

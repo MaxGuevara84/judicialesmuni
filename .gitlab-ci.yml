@@ -6,8 +6,8 @@ stages:
 Build Job:
   stage: build
   script:
-    - git fetch
-    - git pull
+    - git fetch --all
+    - git pull origin main
   artifacts:
     paths:
     - /home/gitlab-runner/wsapiintegracion

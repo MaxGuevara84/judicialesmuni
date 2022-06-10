@@ -1,4 +1,40 @@
 import {Request, Response} from 'express';
+import express from 'express';
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUiExpress from 'swagger-ui-express';
+
+
+
+ 
+//swagger
+const app = express();
+const userRoute = require("./src/Componentes/Peticiones_Router")
+const swaggerUi = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
+const path = require("path")
+const swaggerSpec ={
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "ApiReclamos",
+      version: "2.0.0",
+    },
+    servers: [
+       {
+         url: "https://wsautenticacion.municipiosanjuan.gob.ar/peticiones"
+       }
+    ]
+  },
+  apis: [`${path.joun(__dirname,"./src/Componentes/Peticiones_Router/*.js")}`]
+}
+
+//Middlewares Swagger
+app.use(express.json()),
+app.use("/api", userRoute);
+app.use("/api.doc", swaggerJsdoc, swaggerUi.serve, swaggerUi.setup(swaggerJsDoc(swaggerSpec)))
+
+
+//Response
 const responder = {
   sucess: (req: Request, res: Response, value?: any, message?: string, status?: number) => {
     let statusCode = status || 200;

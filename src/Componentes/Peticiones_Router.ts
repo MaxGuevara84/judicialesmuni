@@ -8,6 +8,7 @@ class PeticionesRouter {
         this.routes();
     }
     routes(){
+        //añadido agregar
         this.router.post('/agregar', peticionController.agregar);
         this.router.get('/listar', peticionController.listar);
         this.router.get('/catalogs', peticionController.getCatalogs);

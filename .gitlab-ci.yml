@@ -20,7 +20,7 @@ Test Job:
     - git pull origin test
   artifacts:
     paths:
-    - /home/gitlab-runner/wsapi-test
+    - /home/gitlab-runner/wsapi-test/wsapiintegracion
 
 Deploy Job:
   stage: deploy

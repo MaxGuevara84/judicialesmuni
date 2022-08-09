@@ -16,7 +16,12 @@ Build Job:
 Test Job:
   stage: test
   script:
-    - echo "Jab Test"
+    - git fetch --all
+    - git pull origin test
+  artifacts:
+    paths:
+    - /home/gitlab-runner/wsapi-test
+
 
 Deploy Job:
   stage: deploy

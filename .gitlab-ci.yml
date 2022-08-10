@@ -16,6 +16,7 @@ Build Job:
 Test Job:
   stage: test
   script:
+    - git checkout test
     - git fetch --all
     - git pull -f origin test
   artifacts:

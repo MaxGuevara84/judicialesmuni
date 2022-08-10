@@ -3,7 +3,6 @@ stages:
 - test
 - deploy
 
-
 Build Job:
   stage: build
   script:
@@ -16,8 +15,7 @@ Build Job:
 Test Job:
   stage: test
   script:
-    - git fetch --all
-    - git pull origin test
+    
   artifacts:
     paths:
     - /home/gitlab-runner/wsapi-test/wsapiintegracion

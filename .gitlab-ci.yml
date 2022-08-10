@@ -15,7 +15,7 @@ Build Job:
 Test Job:
   stage: test
   script:
-    
+    - echo "test"
   artifacts:
     paths:
     - /home/gitlab-runner/wsapi-test/wsapiintegracion

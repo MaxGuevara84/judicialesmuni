@@ -20,8 +20,7 @@ module.exports = {
         // response code
         200: {
           description: "Reclamos obtenidos", // response desc.
-          content: {
-            // content-type
+          Content: {
             "application/json": {
               schema: {
                 $ref: "#/components/schemas/Todo", // Todo model

@@ -1,11 +1,6 @@
 import {Request, Response} from 'express';
 import express from 'express';
-import swaggerJsdoc from 'swagger-jsdoc';
-import swaggerUiExpress from 'swagger-ui-express';
 
-
-
- 
 //swagger
 const app = express();
 const userRoute = require("./src/Componentes/Peticiones_Router")
@@ -31,7 +26,7 @@ const swaggerSpec ={
 //Middlewares Swagger
 app.use(express.json()),
 app.use("/api", userRoute);
-app.use("/api.doc", swaggerJsdoc, swaggerUi.serve, swaggerUi.setup(swaggerJsDoc(swaggerSpec)))
+app.use("/api.doc", swaggerUi.serve, swaggerUi.setup(swaggerJsDoc(swaggerSpec)))
 
 
 //Response

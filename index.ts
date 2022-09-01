@@ -8,9 +8,36 @@ import formData from 'express-form-data';
 import responder from './src/Middlewares/responder';
 import dbMysql from './src//Config/databaseMySQL';
 import Peticiones_Router from './src/Componentes/Peticiones_Router';
+import swaggerJSDoc from 'swagger-jsdoc';
+const path = require("path");
+const app = express();
+const router = express.Router();
+const userRoute = require("./src/Componentes/Peticiones_Router")
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerSpec = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Api Reclamos",
+      version: "1.7.5"
+    },
+    servers: [
+      {
+        url: "http://localhost:4600"
+      }
+    ]
+  },
+  apis: [`${path.join(__dirname,"./Peticiones_Router/*.js")}`],
 
-//const swaggerJsDoc = require("swagger-jsdoc");
-//const swaggerUI = require("swagger-ui-express");
+};
+
+
+//middlewares
+app.use(express.json());
+app.use("/api", userRoute);
+app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerJSDoc(swaggerSpec)));
+
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'desarrollo';
 class Server{

@@ -18,3 +18,4 @@ class PeticionesRouter {
 }
 const peticionNController = new PeticionesRouter();
 export default peticionNController.router;
+module.exports = router ;

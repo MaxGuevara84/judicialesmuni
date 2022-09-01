@@ -15,28 +15,31 @@ const router = express.Router();
 const userRoute = require("./src/Componentes/Peticiones_Router")
 const swaggerUI = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
-const swaggerSpec = {
-  definition: {
-    openapi: "3.0.0",
+
+
+const swaggerOptions = {
+  swaggerDefinition: {
     info: {
       title: "Api Reclamos",
-      version: "1.7.5"
+      version: '1.2.0',
+      description: "Api de Reclamos",
+      name: "Maximiliano Guevara"
     },
-    servers: [
-      {
-        url: "http://localhost:4600"
-      }
-    ]
+    servers: ["http://localhost:4600"]
   },
-  apis: [`${path.join(__dirname,"./Peticiones_Router/*.js")}`],
 
 };
 
+const options ={
+  apis: ["./src/Componentes/Peticiones_Router/*.ts"],
+}
 
+const swaggerDocs = swaggerJSDoc(swaggerOptions);
+app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 //middlewares
 app.use(express.json());
 app.use("/api", userRoute);
-app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerJSDoc(swaggerSpec)));
+
 
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'desarrollo';

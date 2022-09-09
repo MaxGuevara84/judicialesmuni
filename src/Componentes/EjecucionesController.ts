@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import responder from '../Middlewares/responder';
-import dbMysql from '../Config/databaseSQLServerL';
+import dbSql from '../Config/databaseSQLServer';
 
 class EjecucionesController {
     public async listar(req: Request, res: Response) {
@@ -10,7 +10,7 @@ class EjecucionesController {
             // Establezco el limite de items
             const limitOfPages = 20;
             // Realizo la solicitud a la DB ( Ejecuto la query )
-            dbMysql.query(`SELECT id_reclamo, fk_denunciante_reclamo, fecha_hora_reclamo, contenido_reclamo, tipo_reclamo, calle_reclamo, numero_reclamo, orientacion_reclamo, lat_reclamo, lng_reclamo, imagen, operador, estado_reclamo, fk_origen, fk_origen_padre, link_redes_sociales, fk_prioridad, eliminado, fecha_hora_eliminado, fecha_hora_finalizado FROM db_sem.dbo_reclamos 
+            dbSql.query(`SELECT * FROM ASIT_EJECUCION_CRYSTAL
                     LIMIT ${page * limitOfPages},${limitOfPages}`,
                 [req.query.reclamo],
                 (err: any, results: any, fields: any) => {
@@ -19,7 +19,7 @@ class EjecucionesController {
                         responder.error(req, res, err);
                     } else {
                         // Caso contrario mando successs
-                        responder.sucess(req, res, results, 'Reclamos obtenidos', 200);
+                        responder.sucess(req, res, results, 'Resultados obtenidos', 200);
                     }
                 });
 
@@ -29,6 +29,6 @@ class EjecucionesController {
         }
     }
 
-         
+}     
 
-export const peticionController = new PeticionesController();
+export const ejecucionController = new EjecucionesController();

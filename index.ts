@@ -6,8 +6,8 @@ dotenv.config();
 import {Request, Response, NextFunction} from 'express';
 import formData from 'express-form-data';
 import responder from './src/Middlewares/responder';
-import dbMysql from './src//Config/databaseMySQL';
-import Peticiones_Router from './src/Componentes/Peticiones_Router';
+import dbSql from './src//Config/databaseSQLServer';
+import Ejecuciones_Router from './src/Componentes/Ejecuciones_Router';
 
 //const swaggerJsDoc = require("swagger-jsdoc");
 //const swaggerUI = require("swagger-ui-express");
@@ -38,7 +38,7 @@ class Server{
       conectarBd() {
         setTimeout(() => {
           // db;
-          dbMysql;
+          dbSql;
         }, 3000);
       }
       routear() {
@@ -52,7 +52,7 @@ class Server{
         });
         
         //TODO:Aca van las rutas que valla agregando ejemplo this.app.use('/usuarios', usuariosRouter);
-        this.app.use('/peticiones',Peticiones_Router);
+        this.app.use('/peticiones',Ejecuciones_Router);
         this.app.get('*', (req: Request, res: Response) => {
           console.info(`GET 404: ${req.originalUrl}`);
           responder.noEncontrado(req, res);

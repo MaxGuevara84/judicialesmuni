@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import { peticionController } from './EjecucionesController';
+import { ejecucionController } from './EjecucionesController';
 const router: Router = Router();
 class PeticionesRouter {
     router:Router;
@@ -10,7 +10,7 @@ class PeticionesRouter {
     routes(){
         //Listar
        
-        this.router.get('/listar', peticionController.listar);
+        this.router.get('/listar', ejecucionController.listar);
       
     }
 }

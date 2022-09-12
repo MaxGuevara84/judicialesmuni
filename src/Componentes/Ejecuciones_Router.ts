@@ -11,7 +11,7 @@ class PeticionesRouter {
         //Listar
        
         this.router.get('/listar', ejecucionController.listar);
-      
+              
     }
 }
 const peticionNController = new PeticionesRouter();

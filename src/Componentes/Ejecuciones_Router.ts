@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import { ejecucionController } from './EjecucionesController';
 const router: Router = Router();
-class PeticionesRouter {
+class EjecucionesRouter {
     router:Router;
     constructor(){
         this.router = router;
@@ -14,5 +14,5 @@ class PeticionesRouter {
               
     }
 }
-const peticionNController = new PeticionesRouter();
-export default peticionNController.router;
+const ejecucionController = new EjecucionesRouter();
+export default ejecucionController.router;

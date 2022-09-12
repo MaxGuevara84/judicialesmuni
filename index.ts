@@ -6,7 +6,7 @@ dotenv.config();
 import {Request, Response, NextFunction} from 'express';
 import formData from 'express-form-data';
 import responder from './src/Middlewares/responder';
-import dbSql from './src//Config/databaseSQLServer';
+import dbSql from './src//Config/databaseMySQL';
 import Ejecuciones_Router from './src/Componentes/Ejecuciones_Router';
 
 //const swaggerJsDoc = require("swagger-jsdoc");

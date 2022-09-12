@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import responder from '../Middlewares/responder';
-import dbSql from '../Config/databaseSQLServer';
+import dbSql from '../Config/databaseMySQL';
 
 class EjecucionesController {
     public async listar(req: Request, res: Response) {

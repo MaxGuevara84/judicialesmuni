@@ -1,8 +1,8 @@
 //revisar Import en Peticion
 //import {Document} from 'mysql';
 export default interface IEjecuciones extends Document{
-    _id: string;
-    tipo_Reclamo: number;
-    reclamo:Object;
+    anunciante: Int32List;
+    aniocuota: string;
+    ven1:Date;
     
 }

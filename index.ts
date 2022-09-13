@@ -51,8 +51,8 @@ class Server{
           console.log('Instalando datos iniciales...');
         });
         
-        //TODO:Aca van las rutas que valla agregando ejemplo this.app.use('/usuarios', usuariosRouter);
-        this.app.use('/peticiones',Ejecuciones_Router);
+        //TODO:Aca van las rutas que vaya agregando ejemplo this.app.use('/usuarios', usuariosRouter);
+        this.app.use('/ejecuciones',Ejecuciones_Router);
         this.app.get('*', (req: Request, res: Response) => {
           console.info(`GET 404: ${req.originalUrl}`);
           responder.noEncontrado(req, res);

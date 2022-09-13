@@ -14,5 +14,5 @@ class EjecucionesRouter {
               
     }
 }
-const ejecucionController = new EjecucionesRouter();
-export default ejecucionController.router;
+const ejecucionesController = new EjecucionesRouter();
+export default ejecucionesController.router;

@@ -9,7 +9,6 @@ class EjecucionesRouter {
     }
     routes(){
         //Listar
-       
         this.router.get('/listar', ejecucionController.listar);
               
     }
